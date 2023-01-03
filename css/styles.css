@@ -6,6 +6,7 @@
     --accent-color: #2196F3;
     --text-color: #757575;
     --logo-color: #000000;
+    --social-link-color: #AFB1B8;
     --primary-white-color: #FFFFFF;
     --font-logo: 'Raleway', sans-serif;
     --font-body: 'Roboto', sans-serif;
@@ -58,6 +59,7 @@ address {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
 
 body {
     background-color: var(--background-color);
@@ -114,7 +116,8 @@ header .container{
 
 .link, 
 .mail-tel{
-        display: block;
+        display: flex;
+        align-items: center;
         padding-top: 32px;
         padding-bottom: 32px;
         font-style: normal;
@@ -140,25 +143,44 @@ color: var(--accent-color);
     display: flex;
     margin-left: auto;
     }
+.nav-contact-icon {
+    margin-right: 10px;
+    fill: var(--text-color);
+}
         
 .contact .mail-tel:focus,
-.contact .mail-tel:hover{
+.contact .mail-tel:hover {
     color: var(--accent-color);
 }
+.contact .mail-tel:focus .nav-contact-icon,
+.contact .mail-tel:hover .nav-contact-icon {
+    fill: var(--accent-color);
+}
+
 .contact .mail-tel{
     color: var(--text-color);
     text-decoration: none;
 }
 .contact .item + .item {
-    margin-left: 50px;
+    margin-left: 30px;
 }
+
+
 
 /* Hero */
 .hero {
     padding-top: 200px;
     padding-bottom: 200px;
     background-color: var(--background-hero-footer);
+    background-image: linear-gradient(
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)),
+        url("/images/background.jpg");
+    background-size: cover;
+    max-width: 1600рх;
     text-align: center;
+    
+   
     
    }
 .hero-title{
@@ -201,6 +223,7 @@ color: var(--accent-color);
     flex-wrap: wrap;
     margin-top: -30px;
     margin-left: -30px;
+  
   }
 .benefit .item {
     width: 270px;
@@ -222,11 +245,23 @@ color: var(--accent-color);
 .description {
 line-height: 1.71;
 }
+.icon-benefit{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 270px;
+        height: 120px;
+        background-color:var(--background-color-team);
+        border-radius: 4px;
+        margin-bottom: 30px;
+        }
+
 
 /* Чим ми займаємось */
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
+    background-color: var(--background-color);
 }
 
 /* DOESN`T WORK */
@@ -239,12 +274,12 @@ margin-left: -30px;
 margin-top: -30px;
 }
 .tasks-item {
-flex-basis: calc((100%-90px) / 3);
+flex-basis: calc((100% - 90px) / 3);
     margin-left: 30px;
     margin-top: 30px;
 } */
 /* .tasks li {
-    flex-basis: calc((100%-90px)/3);
+    flex-basis: calc((100% - 90px)/3);
     margin-left: 30px;
     margin-top: 30px;
     
@@ -254,8 +289,8 @@ flex-basis: calc((100%-90px) / 3);
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.about-studio {
-    margin-bottom: 50px;
+.heading {
+margin-bottom: 50px;
 font-weight: 700;
 font-size: 36px;
 line-height: 1.17;
@@ -280,6 +315,33 @@ letter-spacing: 0.03em;
         margin-top: 30px;
         margin-left: 30px;
        }
+       .social-list-link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background-color: var(--background-color);
+        border-radius: 50%;
+       }
+       .social-list-link:hover,
+       .social-list-link:focus{
+        background-color: var(--accent-color);
+       }
+       .social-list-link:hover .social-list-icon,
+       .social-list-link:focus .social-list-icon{
+        fill: var(--background-color);
+       }
+       .social-list{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 16px;
+       }
+     
+       .social-list-icon{
+
+           fill: var(--social-link-color);
+       }
 
 /* Наша команда */
 .our-team{
@@ -299,7 +361,6 @@ letter-spacing: 0.03em;
 .team-box{
 background-color: var(--background-color);
 width: 270px;
-height: 368px;
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 0px 0px 4px 4px;
 }
@@ -317,8 +378,42 @@ border-radius: 0px 0px 4px 4px;
     .team-wrapper {
         padding: 30px 20px;
     }
-   
+   /* Постійні клієнти */
+   .customers{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+       }
+    .customer{
+        flex-basis: calc((100% - 180px)/6);
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+      
+    .customer-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 170px;
+        height: 92px;
+        background-color: transparent;
+        border: 1px solid var(--social-link-color);
+        border-radius: 4px;
     
+       }
+    .customer-icon{
+        fill: var(--social-link-color);
+    }
+    .customer-link:hover,
+    .customer-link:focus{
+        border-color: var(--accent-color);
+
+    }
+    .customer-link:hover .customer-icon,
+    .customer-link:focus .customer-icon{
+        fill: var(--accent-color);
+    }
   
 /* Footer */
 
@@ -327,6 +422,7 @@ border-radius: 0px 0px 4px 4px;
     padding-top: 60px;
     padding-bottom: 60px;      
 }
+
 
 .logo-footer {
     color: var(--primary-white-color);
@@ -353,6 +449,36 @@ border-radius: 0px 0px 4px 4px;
 .footer :not(:last-child) {
     margin-bottom: 9px;
 }
+.join{
+        font-weight: 700;
+        line-height: 1.14;
+        color: var(--primary-white-color);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+}
+.footer-container{
+    display: flex;
+}
+.footer-box-adress{
+    margin-right: 70px;
+    width: 231px;
+    height: 132px;
+}
+.footer-box-social{
+    margin-top: 12px;
+    width: 206px;
+    height: 80px;
+}
+.social-list-footer{
+    padding-top: 0px;
+}
+.social-list-link-footer{
+    background: rgba(255, 255, 255, 0.1);
+}
+.social-list-icon-footer{
+    fill: var(--primary-white-color);
+}
+
 
 
 
@@ -406,7 +532,10 @@ border-radius: 0px 0px 4px 4px;
        margin-top: 30px;
        margin-left: 30px;
    }
-  
+  .card:hover,
+  .card:focus{
+   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
   .wrapper{
     padding: 20px 24px;
     border: 1px solid #EEEEEE;

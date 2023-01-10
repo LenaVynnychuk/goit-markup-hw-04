@@ -175,10 +175,11 @@ color: var(--accent-color);
     background-image: linear-gradient(
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)),
-        url("/images/background.jpg");
+        url("../images/background.jpg");
     background-size: cover;
-    max-width: 1600рх;
+    max-width: 1600px;
     text-align: center;
+    margin: auto;
     
    
     
@@ -334,8 +335,9 @@ letter-spacing: 0.03em;
        }
        .social-list{
         display: flex;
-        justify-content: space-between;
-        padding-top: 16px;
+        /* justify-content: space-between; */
+        gap: 10px;
+        margin-top: 16px;
        }
      
        .social-list-icon{
@@ -376,7 +378,7 @@ border-radius: 0px 0px 4px 4px;
     color: var(--text-color);
     }
     .team-wrapper {
-        padding: 30px 20px;
+        padding: 30px 32px;
     }
    /* Постійні клієнти */
    .customers{
@@ -458,17 +460,14 @@ border-radius: 0px 0px 4px 4px;
 }
 .footer-container{
     display: flex;
+    align-items: baseline;
 }
 .footer-box-adress{
     margin-right: 70px;
     width: 231px;
-    height: 132px;
+    /* height: 132px; */
 }
-.footer-box-social{
-    margin-top: 12px;
-    width: 206px;
-    height: 80px;
-}
+
 .social-list-footer{
     padding-top: 0px;
 }
@@ -544,13 +543,16 @@ border-radius: 0px 0px 4px 4px;
     
    
   }
-
+.portfolio-project-link{
+    text-decoration: none;
+}
 .portfolio-project {
     margin-bottom: 5px;
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+    color: var(--title-text-color);
   }
   .category-of-project{
     font-size: 16px;
